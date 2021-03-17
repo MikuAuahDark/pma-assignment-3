@@ -16,7 +16,7 @@ public class HoomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hoome);
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Toast.makeText(this, "Lomgin dulu!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Login dulu!", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

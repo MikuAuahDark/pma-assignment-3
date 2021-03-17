@@ -42,7 +42,7 @@ public class LomginActivity extends AppCompatActivity {
                 FirebaseUser u = LomginActivity.this.firebaseAuth.getCurrentUser();
 
                 if (u != null) {
-                    Toast.makeText(LomginActivity.this, "Sudah lomgin!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LomginActivity.this, "Sudah lomgin!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LomginActivity.this, HoomeActivity.class));
                 }
             }
@@ -85,6 +85,33 @@ public class LomginActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(LomginActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void hmm(View view) {
+        String em = email.getText().toString();
+        if (em.isEmpty()) {
+            Toast.makeText(this, "Masukkan E-mail", Toast.LENGTH_SHORT).show();
+            email.requestFocus();
+            return;
+        }
+
+        Task<Void> result = firebaseAuth.sendPasswordResetEmail(em);
+        result.addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LomginActivity.this, "Reset password terkirim ke E-mail", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LomginActivity.this, "Reset password gagal", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        result.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(LomginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
