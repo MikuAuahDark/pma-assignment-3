@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "855846803689",
+    "project_id": "test-lomgin",
+    "storage_bucket": "test-lomgin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855846803689:android:24ac1d5fd5ba5894e13878",
+        "android_client_info": {
+          "package_name": "id.co.npad93.pm.f5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855846803689-iljd2u7b1la3nih3akp919ju8jr24f26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAugQoDt6RBz4ChL8ftFKJp3SrKkYJmyvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855846803689-iljd2u7b1la3nih3akp919ju8jr24f26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
